@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+// 2. Base stuff
+@import "abstracts/index";
+@import "base/base";
+@import "base/typography";
+
+// 3. Layout-related sections
+@import "layout/layout";
+
+// 4. Components
+@import "components/button";
+@import "components/caixa";
+@import "components/passo";
+@import "components/footer";
+@import "components/popup";
+
+// 5. Pages
+@import "pages/inscricao";

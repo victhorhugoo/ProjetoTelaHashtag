@@ -1,0 +1,23 @@
+.rodape {
+  padding: 4.88rem 2rem;
+
+  &__logo {
+    width: 3.7rem;
+    height: 3.7rem;
+  }
+}
+
+.container--rodape {
+  justify-content: end;
+  align-items: center;
+  gap: 0.8rem;
+
+  @include respond(small) {
+    justify-content: center;
+  }
+
+  & a {
+    text-decoration: none;
+    color: inherit;
+  }
+}

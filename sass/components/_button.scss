@@ -1,0 +1,14 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+.botao {
+  @extend %botao;
+
+  &--amarelo {
+    @extend %botao--amarelo;
+  }
+
+  &--centralizado {
+    @extend %botao--centralizado;
+  }
+}

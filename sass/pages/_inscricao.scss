@@ -1,0 +1,207 @@
+// -----------------------------------------------------------------------------
+// Este arquivo tem estilos espqcíficos da página inscrição
+// -----------------------------------------------------------------------------
+
+.secao {
+  &--hero {
+    background-image: url(https://assets-global.website-files.com/61b9e0dd381626819c8d4f83/64957938a8a62d8071397ed5_pgc-python-bg1.webp);
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    padding-bottom: 0;
+  }
+
+  &--disclaimer {
+    padding: 3.12rem 2rem;
+    background-color: $cor-cinza;
+    box-shadow: 0 0.5rem 1rem -0.2rem rgba(#000000, 0.1);
+  }
+
+  &--quem {
+    background-image: url(https://assets-global.website-files.com/61b9e0dd381626819c8d4f83/62cefb1ecf7f4662905b5b1e_%5BBACKGROUND%5D%20-%20BANNER%2005%20-%20desktop.webp);
+    background-position-x: 50%;
+    background-position-y: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 0;
+    padding-top: 21rem;
+    margin-top: -10rem;
+
+    @include respond(small) {
+      padding-top: 32rem;
+      margin-top: -24rem;
+    }
+
+    @include respond(tiny) {
+      padding-top: 34rem;
+      margin-top: -26rem;
+    }
+  }
+}
+
+.container {
+  &--hero {
+    position: relative;
+    align-items: end;
+    width: 100%;
+
+    @include respond(small) {
+      flex-flow: column;
+      align-items: center;
+      gap: 3.12rem;
+    }
+  }
+
+  &--passo,
+  &--aprender {
+    @include flex($direction: column, $gap: 6rem, $align: start);
+
+    @include respond(small) {
+      gap: 3.9rem;
+    }
+  }
+
+  &--quem {
+    position: relative;
+    width: 100%;
+
+    @include respond(small) {
+      flex-flow: column;
+      align-items: center;
+      gap: 3.12rem;
+    }
+  }
+}
+
+.grid {
+  &--passo {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 6rem;
+    column-gap: 3rem;
+
+    @include respond(small) {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 3.12rem;
+      column-gap: 2rem;
+    }
+
+    @include respond(tiny) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &--aprender {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+
+    @include respond(small) {
+      gap: 2rem;
+    }
+
+    @include respond(tiny) {
+      grid-template-columns: 1fr;
+      gap: 3.12rem;
+    }
+  }
+}
+
+.div-lira {
+  position: absolute;
+  transform: translate(10%);
+  display: flex;
+  width: 70%;
+  right: 0;
+  bottom: 0;
+
+  @include respond(small) {
+    position: relative;
+    transform: none;
+    width: 100%;
+    max-width: 53rem;
+  }
+}
+
+.disclaimer__paragrafo {
+  font-size: 1.33rem;
+}
+
+.img-lira {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+
+  @include respond(small) {
+    max-width: 30rem;
+    grid-row: auto;
+    justify-self: center;
+    grid-column: 1 / span 2;
+  }
+
+  @include respond(tiny) {
+    grid-column: auto;
+  }
+}
+
+.cabecalho-titulo {
+  @include flex($align: center, $gap: 1.6rem);
+}
+
+.aprender-img {
+  border-radius: 2rem;
+  transition: transform ease 200ms;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.quem {
+  @include flex($direction: column, $gap: 3.12rem);
+  color: #fff;
+  max-width: 50%;
+  width: 100%;
+  margin-bottom: 6.1rem;
+
+  @include respond(small) {
+    max-width: 53rem;
+    margin-bottom: 0;
+  }
+
+  &__cabecalho {
+    border-left: solid 4px $cor-amarelo;
+    padding-left: 2rem;
+  }
+
+  &__textos {
+    @include flex($direction: column, $gap: 2rem);
+  }
+
+  & span {
+    color: $cor-amarelo;
+    font-weight: 600;
+  }
+}
+
+.img-lira-logo {
+  position: absolute;
+  width: 45%;
+  right: 0;
+  bottom: 0;
+
+  @include respond(small) {
+    position: relative;
+    width: 100%;
+    max-width: 40rem;
+  }
+}
+
+.img-seta {
+  width: 4.1rem;
+  @include respond(small) {
+    width: 3.5rem;
+  }
+
+  @include respond(tiny) {
+    font-size: 3rem;
+  }
+}

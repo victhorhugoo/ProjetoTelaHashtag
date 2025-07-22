@@ -1,0 +1,108 @@
+.popup--aberto {
+  & .popup {
+    display: flex;
+  }
+}
+
+.popup {
+  z-index: 999;
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.925);
+  backdrop-filter: blur(2.5px);
+
+  &__container {
+    @include flex($direction: column, $gap: 2rem);
+    position: relative;
+    width: 50rem;
+    background-color: #fff;
+    padding: 3.12rem;
+    border-radius: 2.5rem;
+    box-shadow: inset 0 0 0.8rem 0.2rem rgba(0, 0, 0, 0.15);
+
+    @include respond(tiny) {
+      max-width: 95%;
+      padding: 2rem;
+    }
+
+    & .titulo {
+      font-size: 2.76rem;
+      line-height: 1.2;
+      font-weight: 700;
+      text-align: center;
+
+      & .realce {
+        background-color: #d6e4ff;
+        border-radius: 2rem;
+        padding: 0 1.02rem;
+      }
+    }
+
+    &__textos {
+      @include flex($direction: column, $gap: 1.6rem);
+    }
+  }
+
+  &__inputs {
+    @include flex($direction: column, $gap: 1.02rem);
+  }
+
+  &__input {
+    border-radius: 5rem;
+    border: solid 2px #000;
+    padding: 0.82rem 1.28rem;
+    font-size: inherit;
+    color: inherit;
+
+    &--amarelo {
+      border-color: $cor-amarelo;
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 1rem rgba($cor-amarelo, 0.5);
+    }
+  }
+
+  &__botao {
+    @extend %botao;
+
+    &--amarelo {
+      @extend %botao--amarelo;
+    }
+  }
+
+  &__fechar {
+    @include flex($align: center, $justify: center, $gap: 2.5rem);
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(25%, -25%);
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #000;
+    font-weight: 600;
+    font-size: 1.92rem;
+    line-height: 1;
+
+    &:hover {
+      border-width: 1px;
+    }
+
+    &--amarelo {
+      background-color: $cor-amarelo;
+      border-color: darken($cor-amarelo, 30%);
+      color: #fff;
+    }
+  }
+}
